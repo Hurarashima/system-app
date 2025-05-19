@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 
     $check_username = mysqli_query($conn, "SELECT * FROM tbl_users WHERE username = '$username' AND user_id NOT IN ('$id')");
     $result_username = mysqli_num_rows($check_username);
-    
+
     $check_email = mysqli_query($conn, "SELECT * FROM tbl_users WHERE email = '$email' AND user_id NOT IN ('$id')");
     $result_email = mysqli_num_rows($check_email);
 
@@ -23,13 +23,13 @@ if (isset($_POST['submit'])) {
         $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 
         $update_user = mysqli_query($conn, "UPDATE tbl_users SET firstname = '$firstname', middlename = '$middlename', lastname = '$lastname', telephone = '$telephone', email = '$email', username = '$username', password = '$hashed_pass' WHERE user_id = '$id'");
-        header("location: ../update.user.php?user_id=". $id);
+        header("location: ../update.user.php?user_id=" . $id);
 
     } else {
-        header("location: ../update.user.php?user_id=". $id);
+        header("location: ../update.user.php?user_id=" . $id);
     }
 
-    
+
 
 }
 

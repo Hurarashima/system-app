@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../../includes/conn.php';
 ?>
 <!DOCTYPE html>
@@ -72,15 +73,16 @@ require_once '../../includes/conn.php';
                                             <div class="col-md-6 form-group">
                                                 <label for="role">Role</label>
                                                 <select name="role" class="form-control">
-                                                <option selected disabled value="">Select Role</option>    
-                                                <?php 
-                                                $select_role = mysqli_query($conn, "SELECT * FROM tbl_roles");
-                                                while($row = mysqli_fetch_array($select_role)) {
-                                                ?>
-                                                    <option value="<?php echo $row['roles_id']?>"><?php echo $row['role'] ?></option>
-                                                <?php
-                                                }
-                                                ?>
+                                                    <option selected disabled value="">Select Role</option>
+                                                    <?php
+                                                    $select_role = mysqli_query($conn, "SELECT * FROM tbl_roles");
+                                                    while ($row = mysqli_fetch_array($select_role)) {
+                                                        ?>
+                                                        <option value="<?php echo $row['roles_id'] ?>">
+                                                            <?php echo $row['role'] ?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>

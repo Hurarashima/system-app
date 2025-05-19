@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../../includes/conn.php';
 ?>
 <!DOCTYPE html>
@@ -69,16 +70,20 @@ require_once '../../includes/conn.php';
                                                     <td><?php echo $row['email'] ?></td>
                                                     <td><?php echo $row['username'] ?></td>
                                                     <td>
-                                                        <a class="btn btn-primary" href="update.user.php?user_id=<?php echo $row['user_id']; ?>">Update</a>
-                                                        <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#exampleModal<?php echo $row['user_id']?>">Delete</button>
+                                                        <a class="btn btn-primary"
+                                                            href="update.user.php?user_id=<?php echo $row['user_id']; ?>">Update</a>
+                                                        <button class="btn btn-danger" type="button" data-toggle="modal"
+                                                            data-target="#exampleModal<?php echo $row['user_id'] ?>">Delete</button>
                                                         <!-- Modal -->
-                                                        <div class="modal fade" id="exampleModal<?php echo $row['user_id']?>" tabindex="-1"
+                                                        <div class="modal fade"
+                                                            id="exampleModal<?php echo $row['user_id'] ?>" tabindex="-1"
                                                             role="dialog" aria-labelledby="exampleModalLabel"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header bg-danger">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Delete User</h5>
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            Delete User</h5>
                                                                         <button type="button" class="close"
                                                                             data-dismiss="modal" aria-label="Close">
                                                                             <span aria-hidden="true">&times;</span>
@@ -90,7 +95,8 @@ require_once '../../includes/conn.php';
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-dismiss="modal">Close</button>
-                                                                        <a href="userData/ctrl.delete.user.php?user_id=<?php echo $row['user_id']; ?>" class="btn btn-danger">
+                                                                        <a href="userData/ctrl.delete.user.php?user_id=<?php echo $row['user_id']; ?>"
+                                                                            class="btn btn-danger">
                                                                             Delete
                                                                         </a>
                                                                     </div>

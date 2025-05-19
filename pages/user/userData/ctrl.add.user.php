@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 
     $check_username = mysqli_query($conn, "SELECT * FROM tbl_users WHERE username= '$username'");
     $result_username = mysqli_num_rows($check_username);
-    
+
     $check_email = mysqli_query($conn, "SELECT * FROM tbl_users WHERE email= '$email'");
     $result_email = mysqli_num_rows($check_email);
 
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         header("location: ../add.user.php");
     }
 
-    
+
 
 }
 
